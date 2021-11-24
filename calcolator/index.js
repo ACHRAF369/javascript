@@ -10,6 +10,8 @@ function display(x){
     num = scren.value.length;
    char = x;
     // console.log( "total: "+ num);
+    precedNum()
+    checkNum()
    
 }
 
@@ -24,6 +26,12 @@ function calcolator(){
 function precedNum(){
     preced = scren.value.substring(num-2,num-1)
     
+}
+function checkNum(){
+
+    if(preced  == char){
+        alert("non")
+    }
 }
 
 
