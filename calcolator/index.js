@@ -2,7 +2,8 @@
 
 var scren = document.getElementById("screen");
 var num ;
-var char;
+var curchar;
+var operation = ['+','-','*','/',];
 
 function display(x){
     
@@ -24,14 +25,19 @@ function calcolator(){
     scren.value = eval(scren.value);
 }
 function precedNum(){
-    preced = scren.value.substring(num-2,num-1)
+    prechar = scren.value.substring(num-2,num-1);
     
 }
 function checkNum(){
 
-    if(preced  == char){
-        alert("non")
+    if(operation.includes(prechar) && operation.includes(curchar)){
+        if(prechar == curchar){
+            deletChar();
+        }
     }
+}
+function deletChar(){
+    scren.value = scren.value.substring(0,num-1);
 }
 
 
