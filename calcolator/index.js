@@ -1,5 +1,6 @@
 //*************variables************//
 
+
 var scren = document.getElementById("screen");
 var num ;
 var curchar;
@@ -9,10 +10,11 @@ function display(x){
     
     scren.value += x;
     num = scren.value.length;
-   char = x;
-    // console.log( "total: "+ num);
+   curchar = x;
+    // console.log( "total: "+ curchar);
     precedNum()
-    checkNum()
+   
+   
    
 }
 
@@ -26,13 +28,20 @@ function calcolator(){
 }
 function precedNum(){
     prechar = scren.value.substring(num-2,num-1);
+    checkNum()
     
 }
 function checkNum(){
 
-    if(operation.includes(prechar) && operation.includes(curchar)){
+     if(operation.includes(prechar) && operation.includes(curchar)){
         if(prechar == curchar){
-            deletChar();
+
+            alert("test");
+        }
+        else{
+
+             scren.value = 
+            console.log(scren.value.slice(0,num-2)); 
         }
     }
 }
