@@ -22,6 +22,19 @@ function clearScreen(){
     scren.value = "";
 
 }
+// function e(){
+    
+//    var h=4;
+   
+//    return () => {
+
+//        console.log(h);
+
+//    }
+
+
+// }
+// e();
 
 function calcolator(){
     scren.value = eval(scren.value);
@@ -34,14 +47,18 @@ function precedNum(){
 function checkNum(){
 
      if(operation.includes(prechar) && operation.includes(curchar)){
-        if(prechar == curchar){
+         if(prechar == curchar){
+          deletChar()
+          // 
+        }else{
 
-            alert("test");
-        }
-        else{
+             scren.value = scren.value.slice(0, num-2) + scren.value.slice(num-1);
 
-             scren.value = 
-            console.log(scren.value.slice(0,num-2)); 
+        //   scren.value = 
+        //   console.log(num.substr(0,num) + scren.value.substr(num+1));
+             
+             
+
         }
     }
 }
