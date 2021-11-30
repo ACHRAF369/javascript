@@ -6,11 +6,15 @@ body{
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(#ff0101, #2c0505);
+   
 }
 .container{
     background-color: blanchedalmond;
     width: 400px;
     height: px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius: 4%;
 }
 .button{
     display: flex;
@@ -19,7 +23,8 @@ body{
 }
 input[type="text"]{
    width: 99%;
-   height: 3em;
+   height: 2em;
+ 
     border: none;
     outline: none;
     background-color: rgb(27, 21, 21);
