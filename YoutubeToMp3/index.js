@@ -1,6 +1,6 @@
 //required packages
 const express = require("express");
-// const fetch = require("node-fetch");
+const fetch = require("node-fetch");
 
 require("dotenv").config();
 
@@ -21,14 +21,16 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Hello word")
+    res.render("index")
 })
 
 app.post("/", (req, res) => {
-    res.send("Hello word")
+   
 })
+
 
 //start the server 
 app.listen(PORT, () => {
     console.log(`server start on port ${PORT}`);   
+    
 })
