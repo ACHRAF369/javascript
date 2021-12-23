@@ -7,4 +7,9 @@ require("dotenv").config();
 const app = express();
 
 //server port number
-const PORT = 
+const PORT = process.env.PORT || 3000;
+
+//start the server 
+app.listen(PORT, () => {
+    console.log(`server start on port ${PORT}`);
+})
