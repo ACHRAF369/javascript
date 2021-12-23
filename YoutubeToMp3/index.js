@@ -17,7 +17,14 @@ app.use(express.static("public"))
 app.use(express.urlencoded({
     extended:true
 }))
-app.use("/", (req, res) => {
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("Hello word")
+})
+
+app.post("/", (req, res) => {
     res.send("Hello word")
 })
 
