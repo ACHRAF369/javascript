@@ -17,6 +17,9 @@ app.use(express.static("public"))
 app.use(express.urlencoded({
     extended:true
 }))
+app.use("/", (req, res) => {
+    res.send("Hello word")
+})
 
 //start the server 
 app.listen(PORT, () => {
