@@ -26,7 +26,18 @@ app.get("/", (req, res) => {
 
 })
 
-app.post("/", (req, res) => {
+app.post("/convert-mp3", async (req, res) => {
+    const videoId = req.body.videoID;
+    if(
+        videoId === undefined ||
+        videoId === "" ||
+        videoId === null
+    ){
+        return res.render("index", {success:false, message : "Pleas enter a video ID"});
+    }else{
+        
+    }
+    
    
 })
 
