@@ -43,6 +43,10 @@ app.post("/convert-mp3", async (req, res) => {
             }
         });
         const fetchResponse = await fetchAPI.json();
+        
+        if(fetchResponse.status  === "ok"){
+            return res.render("index", {success:true, Song_title: fetchResponse.title, song_link : fetchResponse.link});
+        }
     }
     
    
