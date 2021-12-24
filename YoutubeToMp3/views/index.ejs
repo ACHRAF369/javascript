@@ -34,6 +34,13 @@
           </div>
        </form>
     </div>
+    <div class="bottom-container">
+       <% if(typeof success != "undefined" && success){%>
+         <div class="success">
+           <p><%= song_title %></p>
+         </div>
+      <% } %>
+    </div>
 
  </body>
 
