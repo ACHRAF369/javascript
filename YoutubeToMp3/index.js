@@ -49,7 +49,7 @@ app.post("/convert-mp3", async (req, res) => {
             }); 
         }
             else {
-                return res.render("index", { success: false, message: fetchResponse.msg })
+                return res.render("index", { success: false, message: fetchResponse.msg });
             }
        
     }
