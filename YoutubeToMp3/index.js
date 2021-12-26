@@ -1,21 +1,21 @@
 
 //required packages
 const express = require("express");
-// const fetch = require("node-fetch");
+const fetch = require("node-fetch");
 require("dotenv").config();
 
 //create the express server
 const app = express();
 
 //server port number
-const PORT = 3030;
+const PORT =process.env.PORT || 3030;
 
 app.set("view engine", "ejs");
 
 app.use(express.static("public"))
 
 app.use(express.urlencoded({
-    extended:true
+    extended: true;
 
 }))
 
@@ -28,33 +28,39 @@ app.get("/", (req, res) => {
 
 app.post("/convert-mp3", async (req, res) => {
     const videoId = req.body.videoID;
-    if(
+    if ( 
         videoId === undefined ||
         videoId === "" ||
         videoId === null
-    ){
-        return res.render("index", {success:false, message : "Pleas enter a video ID"});
-    }else{
-        const fetchAPI = await fetch(`https://youtube-mp36.p.rapidapi.com?id=${videoId}`,{
-            "methode" : "GET",
-            "headers" : {
+    ) {
+        return res.render("index", { success: false, message: "Pleas enter a video ID" });
+    } else {
+        const fetchAPI = await fetch(`https://youtube-mp36.p.rapidapi.com?id=${videoId}`, {
+            "methode": "GET",
+            "headers": {
                 "x-rapidapi-key": process.env.API_KEY,
                 "x-rapidapi-host": process.env.API_HOST
             }
         });
         const fetchResponse = await fetchAPI.json();
-        
-        if(fetchResponse.status  === "ok"){
-            return res.render("index", {success:true, Song_title: fetchResponse.title, song_link : fetchResponse.link});
+
+        if (fetchResponse.status === "ok") {
+            return res.render("index", {
+                success: true, Song_title: fetchResponse.title, song_link: fetchResponse.link.title, song_link: fetchResponse.link, song_link: fetchResponse.link
+            }); 
         }
+            else {
+                return res.render("index", { success: false, message: fetchResponse.msg })
+            }
+       
     }
-    
-   
+
+
 })
 
 
 //start the server 
 app.listen(PORT, () => {
-    console.log(`server start on port ${PORT}`);   
-    
+    console.log(`server start on port ${PORT}`);
+
 })
