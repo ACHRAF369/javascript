@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "name": "todo",
+  "version": "1.0.0",
+  "main": "connect_db.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
