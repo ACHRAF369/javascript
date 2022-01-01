@@ -2,7 +2,7 @@ li[block-type=editor]{
  
    }
    li[block-type=action]{
-      background-color:#5F9EA0 !important;
+      background-color:#31f300 !important;
    }
    li[block-type=function]{
       background-color:#FF7F50 !important;
@@ -20,6 +20,7 @@ li[block-type=editor]{
      bottom:0px;
      width:250px;
      height:calc(100% - 50px);
+    
      
    }
    .editor {
@@ -29,12 +30,12 @@ li[block-type=editor]{
      bottom: 0px;
      width:calc(100% - 254px);
      height:calc(100% - 71px);
-     background-color:#8A8E91;
+     background-color:#047cd8;
      border:none;
    }
    
    .action {
-     background-color:#5F9EA0;
+     background-color:#02d9e0;
      display:inline-block;
    }
    li {
@@ -46,9 +47,9 @@ li[block-type=editor]{
    }
    
    .code-box {
+     margin: 0.5em;
      padding:15px;
-     border: 2px solid red;
-     border-radius: 25px;
+
    }
    .nav-right {
      float:right !important;

@@ -1,10 +1,23 @@
 var draggingid; 
-let Valinput = document.querySelector('#Valinput').value;
+let input = document.querySelector('#Valinput');
+let inp= [];
 
-console.log(Valinput);
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+      inp.push(input.value)
+      console.log(inp)
+  }
 
-var id = {load:`<div class='code-box' style='background-color:rgb(125, 253, 125);'>${Valinput}<br></div><br><br>`,
-          var:"var <div id='vare' class='action' style='display:inline-block; ' block-accept='none'><input id='texte' type='text' block-accept='none'> = <div class='action' id='varoute' style='background-color:#FF8C00;' block-accept='indicator'>&nbsp;&nbsp;&nbsp;&nbsp;</div> ;</div><br>",
+});
+
+
+
+
+
+
+
+var id = {load:`<div class='code-box' style='background-color:rgb(125, 253, 125);'> <input type="text" style="background-color:  brown;" value="test"><br></div> <br><br>`,
+          var:"var <div id='vare' class='action' style='display:inline-block; ' block-accept='none'><input id='texte' type='text' block-accept='none'> = <div class='action'  id='varoute' vlaue='test' style='background-color:#FF8C00;' block-accept='indicator'> &nbsp;&nbsp;&nbsp;&nbsp;</div> ;</div> <br>",
           color:"white",
           text:"\"<input id='texte' type='text' block-accept='none'>\"",
           varee:"<input id='varee' type='text' block-accept='elementget'>",
@@ -30,13 +43,16 @@ function allowDrop(ev) {
 } 
 
 function drop(ev) {
+
   var targetid = ev.target.id;
+
   var target_type = $("#" + ev.target.id).attr("block-accept");
   var draggingid = ev.dataTransfer.getData("text/html");
   var dragging_type = ev.dataTransfer.getData("type");
   if (target_type.indexOf(dragging_type) >= 0){
     ev.target.insertAdjacentHTML( 'beforeend', id[draggingid] );
   }
+
 } 
 
 
