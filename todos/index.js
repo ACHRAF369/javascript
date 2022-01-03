@@ -1,14 +1,25 @@
+const mysql = require('mysql');
 const http = require('http');
+const bodyparser = require('body-parser')
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const requestListener = function (req, res) {
+    res.writeHead(200);
+    res.end('Hello, World!');
+  }
+  
+  const server = http.createServer(requestListener);
+  server.listen(8080);
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+const mysqlConnection = mysql.createConnection({
+host:'localhost',
+user : 'root',
+password: '',
+database:'todolist'
+});
+mysqlConnection.connect((err)=>{
+    if(!err)
+    console.log('BD connection succeded.')
+    else
+    console.log('DB connection failed \n eroor' + JSON.stringify(err,undefined,2));
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
