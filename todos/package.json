@@ -1,18 +1,30 @@
 {
-  "name": "todos",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js"
-  },
-  "author": "",
-  "license": "ISC",
+  
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.17.2",
-    "module": "^1.2.5",
+
+    "http": "^0.0.1-security",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15"
-  }
+  },
+  "scripts": {
+
+    "start": "nodemon server.js"
+  },
+
+  "name": "todo_list",
+  "version": "1.0.0",
+  "main": "controller.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejjraifihamza/todo_list.git"
+  },
+
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejjraifihamza/todo_list/issues"
+  },
+
+  "homepage": "https://github.com/ejjraifihamza/todo_list#readme",
+  "description": ""
 }
