@@ -1,7 +1,7 @@
 const express = require('express');
 const axphbs = require('express-handlebars');
-const bodyParser = require('mysql');
-const mysql = require('mysql');
+const bodyParser = require('body-parser');
+const mysql = require('mysql2');
 
 require('dotenv').config(); 
 
@@ -15,6 +15,11 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.engine('hbs', exphbs( {extname: '.hbs'}));
+app.set('view engine', 'hbs');
 
+app.get('', (req, res) => {
+
+    res.render('home');
+})
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
