@@ -45,6 +45,7 @@ exports.deleteTodoById = (id) => {
   new Promise((reject) => {
     let sql = `DELETE FROM todos WHERE id = ${id}`;
     con.query(sql, (err) => {
+      
       if (err) reject(err);
 
     });
@@ -55,6 +56,7 @@ exports.addTodo = (id, title, description) => {
 
   new Promise((reject) => {
     let sql = `INSERT INTO todos (id, title, description) VALUES ('${id}', '${title}', '${description}')`;
+
     con.query(sql, (err) => {
       if (err) reject(err);
 
