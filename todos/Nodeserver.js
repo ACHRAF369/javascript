@@ -6,9 +6,7 @@ let port = 3000;
 let server = http.createServer(async (req, res) => {
 
   if (req.url == "/api/todos" && req.method == "GET") Todo.getAllTodos(res);
-  
   else if (
-
     req.url.match(/\/api\/todos\/([a-z A-Z 0-9]+)/)  &&
     req.method == "GET"
     
@@ -54,11 +52,11 @@ let server = http.createServer(async (req, res) => {
       let id = req.url.split("/")[3];
       await Todo.updateById(id, JSON.parse(body), res);
 
+
     } 
-
   catch (error) {
-
       console.log(error);
+
 
     }
 
@@ -67,6 +65,7 @@ let server = http.createServer(async (req, res) => {
 else {
     res.writeHead(404, { "Content-type": "application.json" });
     res.end(JSON.stringify({ message: "Oops Route not found!" }));
+
 
   }
 });

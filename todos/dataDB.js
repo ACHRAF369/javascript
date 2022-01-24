@@ -3,7 +3,7 @@ let con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "exemple",
+  database: "todo_api",
 
 });
 con.connect((err) => {
