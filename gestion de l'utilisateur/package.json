@@ -1,21 +1,24 @@
 {
-  "name": "gestion-de-l'utilisateur",
+  "name": "nodejs-pug-starter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple nodejs project starter with pugjs templating.",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.2",
-    "express-handlebars": "^6.0.2",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.13.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulaz1z/nodejs-pug-starter.git"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+  "author": "Abdul Aziz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulaz1z/nodejs-pug-starter/issues"
+  },
+  "homepage": "https://github.com/abdulaz1z/nodejs-pug-starter#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^2.0.15",
+    "pug": "^2.0.1"
   }
 }
