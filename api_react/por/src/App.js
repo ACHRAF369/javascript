@@ -1,13 +1,29 @@
-import logo from './logo.svg';
+
+import Users from './components/users/Users';
+import Navbar from './components/partials/Navbar';
+import UserItem from './components/users/UserItem'
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import './App.css';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <h1>Salam mais cher devlopers</h1>
-      <a href="" className="btn btn-primary">salam</a>
+      <Navbar />
+      
+      <div className="container mt-3">
+        <Switch>
+          <Route exact path= "/users/:login" component={Users} />
+          <Route exact path= "/users" component={UserItem} />
+          <Route exact  component={Users} />
+        </Switch>
+      </div>
     </div>
+    </Router>
   );
+  
 }
 
 export default App;
