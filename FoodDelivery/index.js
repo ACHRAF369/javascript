@@ -6,7 +6,7 @@ const {
   mealRouter,
   categoryRouter,
   orderRouter,
-} = require("./routes");
+} = require("./app/routes");
 
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
@@ -30,3 +30,4 @@ app.use("/secteur", secteurRouter);
 app.listen(process.env.PORT, () =>
   console.log(`server running in ${process.env.PORT}`)
 );
+

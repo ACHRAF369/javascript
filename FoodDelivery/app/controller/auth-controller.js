@@ -1,7 +1,6 @@
 const { userModel } = require("../model");
 
 const bcrypt = require("bcryptjs");
-
 const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
@@ -9,6 +8,7 @@ const register = async (req, res) => {
     const salt = await bcrypt.genSalt(12);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     const user = await userModel.create({
+      
       ...req.body,
       password: hashedPassword,
     });
@@ -41,6 +41,7 @@ const login = async (req, res) => {
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
+
     );
     if (!validPassword) return res.status(404).send("password wrong");
 

@@ -17,7 +17,7 @@ router.post(
 );
 router.get(
   "/",
-  [authentication, authorization("admin", "chef secteur")],
+  // [authentication, authorization("admin", "chef secteur")],
   userController.getAll
 );
 router.get(

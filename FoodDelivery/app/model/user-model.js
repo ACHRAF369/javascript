@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "the name field is required"],
       min: 3,
+      
     },
     email: {
       type: String,
